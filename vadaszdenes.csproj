@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="pictures\ApartmentBlock.jpeg" />
+    <None Remove="pictures\FireStation - Copy.jpeg" />
+    <None Remove="pictures\FireStation.jpeg" />
+    <None Remove="pictures\gasstation - Copy.jpeg" />
+    <None Remove="pictures\gasstation.jpeg" />
+    <None Remove="pictures\Hospital - Copy.jpeg" />
+    <None Remove="pictures\Hospital.jpeg" />
+    <None Remove="pictures\House - Copy.jpeg" />
+    <None Remove="pictures\House.jpeg" />
+    <None Remove="pictures\PowerPlant - Copy.jpeg" />
+    <None Remove="pictures\PowerPlant.jpeg" />
+    <None Remove="pictures\proba - Copy.jpg" />
+    <None Remove="pictures\proba.jpg" />
+    <None Remove="pictures\road %281%29.png" />
+    <None Remove="pictures\road %282%29.png" />
+    <None Remove="pictures\road %283%29 - Copy.png" />
+    <None Remove="pictures\road %283%29.png" />
+    <None Remove="pictures\road %284%29 - Copy.png" />
+    <None Remove="pictures\road %284%29.png" />
+    <None Remove="pictures\School - Copy.jpeg" />
+    <None Remove="pictures\School.jpeg" />
+    <None Remove="pictures\test.jpg" />
+    <None Remove="proba.jpg" />
+    <None Remove="test.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="pictures\ApartmentBlock.jpeg" />
+    <Resource Include="pictures\FireStation.jpeg" />
+    <Resource Include="pictures\gasstation.jpeg" />
+    <Resource Include="pictures\Hospital.jpeg" />
+    <Resource Include="pictures\House.jpeg" />
+    <Resource Include="pictures\PowerPlant.jpeg" />
+    <Resource Include="pictures\road (1).png" />
+    <Resource Include="pictures\road (2).png" />
+    <Resource Include="pictures\road (3).png" />
+    <Resource Include="pictures\road (4).png" />
+    <Resource Include="pictures\School.jpeg" />
+    <Resource Include="pictures\test.jpg" />
+  </ItemGroup>
+
+</Project>
