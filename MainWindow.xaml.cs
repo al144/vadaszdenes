@@ -26,8 +26,29 @@ namespace vadaszdenes
                 citygrid.ColumnDefinitions.Add(new ColumnDefinition());
                 citygrid.RowDefinitions.Add(new RowDefinition());
             }
+            List<House> houses = new List<House>();
 
+            houses.Add(new House(1, 2, 212, 50));
 
+            foreach (House a in houses)
+            {
+
+                Image h = new Image
+                {
+                    Source = new BitmapImage(new Uri(a.getPicturePos())),
+                    Height = 150,
+                    Width = 150,
+                    Visibility = Visibility.Visible,
+                };
+
+                Grid.SetColumn(h, 10);
+                Grid.SetRow(h, 10);
+                citygrid.Children.Add(h);
+
+                
+                
+            }
+            
 
         }
 
@@ -84,23 +105,37 @@ namespace vadaszdenes
 
         abstract class Building
         {
-            protected int poz_x;
-            protected int poz_y;
+            protected int pos_x;
+            protected int pos_y;
             protected string type;
             protected int size;
+            protected string picturePos;
 
-            public Building(int poz_x, int poz_y, string type, int size)
+            public Building(string picturePos ,int pos_x, int pos_y, string type, int size)
             {
-                this.poz_x = poz_x;
-                this.poz_y = poz_y;
+                this.picturePos = picturePos;
+                this.pos_x = pos_x;
+                this.pos_y = pos_y;
                 this.type = type;
                 this.size = size;
             }
 
-            public string GetBuildingType() // Metódus neve más, hogy ne ütközzön Object.GetType()-tal
+            public int getPos_X()
             {
-                return this.type;
+                return pos_x;
             }
+
+            public int getPos_Y()
+            {
+                return pos_y;
+            }
+
+            public string getPicturePos()
+            {
+                return picturePos;
+            }
+
+
         }
 
 
@@ -109,10 +144,9 @@ namespace vadaszdenes
             protected int workers;
             protected int cost;
             protected int income;
-            protected string picturePos;
 
-            public WorkPlace(int poz_x, int poz_y, string type, int size, int workers, int cost, int income)
-                : base(poz_x, poz_y, type, size)
+            public WorkPlace(string picturePos, int pos_x, int pos_y, string type, int size, int workers, int cost, int income)
+                : base(picturePos ,pos_x, pos_y, type, size)
             {
                 this.workers = workers;
                 this.cost = cost;
@@ -122,24 +156,25 @@ namespace vadaszdenes
 
         class Factory : WorkPlace
         {
-            public Factory(int poz_x, int poz_y, int size, string type, int workers, int cost, int income)
-                : base(poz_x, poz_y, "Factory", size, workers, cost, income) { }
+            protected int income;
+            protected int cost;
+            public Factory(int pos_x, int pos_y, int size, int workers, int cost, int income)
+                : base("", pos_x, pos_y, "Factory", size, workers, cost, income) { 
+                
+                this.income = income;
+                this.cost = cost; 
+            }
         }
 
         class House : Building
         {
             protected int hapiness;
 
-            public House(int poz_x, int poz_y, int size, int hapiness)
-                : base(poz_x, poz_y, "House", size)
+            public House(int pos_x, int pos_y, int size, int hapiness)
+                : base("pictures/House.jpeg", pos_x, pos_y, "House", size)
             {
                 this.hapiness = hapiness;
             }
         }
-
-
-        House jaj = new House(1, 1, 1, 1);
-        jaj.almaSama();
-
     }
 }

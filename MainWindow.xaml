@@ -14,7 +14,7 @@
         </Grid>
          <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,19,768" HorizontalAlignment="Right" Width="317"/>
         
-        <Label x:Name="Stats" Visibility="Collapsed" Background="Azure" HorizontalAlignment="Left" Height="217" Margin="10,0,0,0" VerticalAlignment="Top" Width="129" />
+        <Label x:Name="Stats" Visibility="Visible" Background="Azure" HorizontalAlignment="Left" Height="217" Margin="10,0,0,0" VerticalAlignment="Top" Width="129" />
         
     </Grid>
 </Window>
