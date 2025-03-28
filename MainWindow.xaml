@@ -7,14 +7,18 @@
         mc:Ignorable="d"
         Title="MainWindow" MinHeight="1080" MinWidth="1920" MaxHeight="1080" MaxWidth="1920"  WindowStartupLocation="CenterScreen" WindowState="Maximized" >
     <Grid x:Name="gridHost">
-        <Grid x:Name="citygrid" Background="Black" MouseDown="Grid_MouseDown" MouseMove="Grid_MouseMove" MouseUp="Grid_MouseUp" Margin="-500,-920,-500,-920" >
+        <Grid x:Name="citygrid" MouseRightButtonDown="CityGrid_MouseDown" Margin="-500,-920,-500,-920" >
             <Grid.RenderTransform>
                 <TranslateTransform/>
             </Grid.RenderTransform>
+
         </Grid>
-         <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,19,768" HorizontalAlignment="Right" Width="317"/>
         
-        <Label x:Name="Stats" Visibility="Visible" Background="Azure" HorizontalAlignment="Left" Height="217" Margin="10,0,0,0" VerticalAlignment="Top" Width="129" />
-        
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,19,768" HorizontalAlignment="Right" Width="317"/>
+        <Button Content="Next Month" Visibility="Visible" HorizontalAlignment="Left" Height="94" Margin="1684,860,0,0" VerticalAlignment="Top" Width="144"/>
+        <Button x:Name="New_Project_Button" Content="New Projects" Visibility="Visible" HorizontalAlignment="Left" Margin="1584,301,0,0" VerticalAlignment="Top" Width="317" Height="56" Click="New_Project"/>
+        <Label x:Name="Stats" Visibility="Visible" Background="Azure" HorizontalAlignment="Left" Height="217" Margin="10,0,0,0" VerticalAlignment="Top" Width="129" MouseDown="Update_Stats"/>
+        <Grid x:Name="Build_Window" Visibility="Collapsed" HorizontalAlignment="Left" Background="AntiqueWhite" Height="274" Margin="352,680,0,0" VerticalAlignment="Top" Width="1096"/>
+
     </Grid>
 </Window>
